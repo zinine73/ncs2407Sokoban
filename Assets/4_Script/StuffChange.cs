@@ -23,17 +23,17 @@ public class StuffChange : MonoBehaviour
             if (mapEnumType == MapEnum.Ground)
             {
                 sr.sprite = ground;
-                sr.sortingOrder = 1;
+                sr.sortingOrder = 0;
             }
             else if (mapEnumType == MapEnum.Wall)
             {
                 sr.sprite = wall;
-                sr.sortingOrder = 2;
+                sr.sortingOrder = 1;
             }
             else if (mapEnumType == MapEnum.Goal)
             {
                 sr.sprite = goal;
-                sr.sortingOrder = 3;
+                sr.sortingOrder = 2;
             }
             else // 상자인 경우
             {
