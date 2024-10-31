@@ -9,6 +9,39 @@ public class MapButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textNumber;
     [SerializeField] private Image imageCleared;
     private int number;
+    private Admob admob;
+
+    private void Awake()
+    {
+        admob = GetComponent<Admob>();
+    }
+
+    public void DisableAd()
+    {
+        admob.DestroyAd();
+    }
+
+    public void LoadAd()
+    {
+        admob.LoadAd();
+    }
+
+    public void ShowAd()
+    {
+        admob.ShowAd();
+    }
+
+    public void RewardAd()
+    {
+        GameManager.instance.SetOpenClearMapData(number, "O");
+        GetComponent<Button>().interactable = true;
+        textNumber.alpha = 1.0f;
+    }
+
+    public void SetNumberAlpha()
+    {
+        textNumber.alpha = 0.5f;
+    }
 
     /// <summary>
     /// 맵 번호 지정하기
